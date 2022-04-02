@@ -63,18 +63,18 @@ async def start(client, message):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(f"Play", callback_data='help_play'),
-                        InlineKeyboardButton(f"Settings", callback_data=f"help_settings"),
-                        InlineKeyboardButton(f"Recording", callback_data='help_record'),
+                        InlineKeyboardButton(f"✗ ᴘʟᴀʏ ✗", callback_data='help_play'),
+                        InlineKeyboardButton(f"✗ ꜱᴇᴛᴛɪɴɢꜱ ✗", callback_data=f"help_settings"),
+                        InlineKeyboardButton(f"✗ ʀᴇᴄᴏʀᴅɪɴɢ ✗", callback_data='help_record'),
                     ],
                     [
-                        InlineKeyboardButton("Scheduling", callback_data="help_schedule"),
-                        InlineKeyboardButton("Controling", callback_data='help_control'),
-                        InlineKeyboardButton("Admins", callback_data="help_admin"),
+                        InlineKeyboardButton("✗ ꜱᴄʜᴇᴅᴜʟɪɴɢ ✗", callback_data="help_schedule"),
+                        InlineKeyboardButton("✗ ᴄᴏɴᴛʀᴏʟɪɴɢ ✗", callback_data='help_control'),
+                        InlineKeyboardButton("✗ ᴀᴅᴍɪɴꜱ ✗", callback_data="help_admin"),
                     ],
                     [
-                        InlineKeyboardButton(f"Misc", callback_data='help_misc'),
-                        InlineKeyboardButton("Close", callback_data="close"),
+                        InlineKeyboardButton(f"✗ ᴍɪꜱᴄ ✗", callback_data='help_misc'),
+                        InlineKeyboardButton("✗ ᴄʟᴏꜱᴇ ✗", callback_data="close"),
                     ],
                 ]
                 )
@@ -121,7 +121,7 @@ async def start(client, message):
                         k=d    
                     f.append(InlineKeyboardButton(text=f"{k}",callback_data=f"sch_month_{year_}_{month}_{d}"))
                 button.append(f)
-            button.append([InlineKeyboardButton("Close", callback_data="schclose")])
+            button.append([InlineKeyboardButton("✗ ᴄʟᴏꜱᴇ ✗", callback_data="schclose")])
             await msg.edit(f"Choose the day of the month you want to schedule the voicechat.\nToday is {thisday} {smonth} {year}. Chooosing a date preceeding today will be considered as next year {year+1}", reply_markup=InlineKeyboardMarkup(button))
 
 
@@ -129,13 +129,12 @@ async def start(client, message):
         return
     buttons = [
         [
-            InlineKeyboardButton('⚙️ Update Channel', url='https://t.me/subin_works'),
-            InlineKeyboardButton('🧩 Source', url='https://github.com/subinps/VCPlayerBot')
+            InlineKeyboardButton('✗ ʜᴇʟᴘ ✗', callback_data='help_main'),
+            InlineKeyboardButton('✗ ᴄʟᴏꜱᴇ ✗', callback_data='close'),
         ],
         [
-            InlineKeyboardButton('👨🏼‍🦯 Help', callback_data='help_main'),
-            InlineKeyboardButton('🗑 Close', callback_data='close'),
-        ]
+            InlineKeyboardButton('✗ ᴅᴇᴠ ✗', url='https://t.me/DarkPentester'),
+        ],
     ]
     reply_markup = InlineKeyboardMarkup(buttons)
     k = await message.reply(HOME_TEXT.format(message.from_user.first_name, message.from_user.id), reply_markup=reply_markup)
@@ -148,19 +147,19 @@ async def show_help(client, message):
     reply_markup=InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("Play", callback_data='help_play'),
-                InlineKeyboardButton("Settings", callback_data=f"help_settings"),
-                InlineKeyboardButton("Recording", callback_data='help_record'),
+                InlineKeyboardButton("✗ ᴘʟᴀʏ ✗", callback_data='help_play'),
+                InlineKeyboardButton("✗ ꜱᴇᴛᴛɪɴɢꜱ ✗", callback_data=f"help_settings"),
+                InlineKeyboardButton("✗ ʀᴇᴄᴏʀᴅɪɴɢ ✗", callback_data='help_record'),
             ],
             [
-                InlineKeyboardButton("Scheduling", callback_data="help_schedule"),
-                InlineKeyboardButton("Controling", callback_data='help_control'),
-                InlineKeyboardButton("Admins", callback_data="help_admin"),
+                InlineKeyboardButton("✗ ꜱᴄʜᴇᴅᴜʟɪɴɢ ✗", callback_data="help_schedule"),
+                InlineKeyboardButton("✗ ᴄᴏɴᴛʀᴏʟɪɴɢ ✗", callback_data='help_control'),
+                InlineKeyboardButton("✗ ᴀᴅᴍɪɴꜱ ✗", callback_data="help_admin"),
             ],
             [
-                InlineKeyboardButton("Misc", callback_data='help_misc'),
-                InlineKeyboardButton("Config Vars", callback_data='help_env'),
-                InlineKeyboardButton("Close", callback_data="close"),
+                InlineKeyboardButton("✗ ᴍɪꜱᴄ ✗", callback_data='help_misc'),
+                InlineKeyboardButton("✗ ᴄᴏɴꜰɪɢ ᴠᴀʀꜱ ✗", callback_data='help_env'),
+                InlineKeyboardButton("✗ ᴄʟᴏꜱᴇ ✗", callback_data="close"),
             ],
         ]
         )
@@ -170,7 +169,7 @@ async def show_help(client, message):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(f"Help", url=f"https://telegram.dog/{Config.BOT_USERNAME}?start=help"),
+                        InlineKeyboardButton(f"✗ ʜᴇʟᴘ ✗", url=f"https://telegram.dog/{Config.BOT_USERNAME}?start=help"),
                     ]
                 ]
             ),)
@@ -184,25 +183,25 @@ async def show_help(client, message):
         disable_web_page_preview=True
         )
     #await delete_messages([message])
-@Client.on_message(filters.command(['repo', f"repo@{Config.BOT_USERNAME}"]))
-async def repo_(client, message):
-    buttons = [
-        [
-            InlineKeyboardButton('🧩 Repository', url='https://github.com/subinps/VCPlayerBot'),
-            InlineKeyboardButton('⚙️ Update Channel', url='https://t.me/subin_works'),     
-        ],
-        [
-            InlineKeyboardButton("🎞 How to Deploy", url='https://youtu.be/mnWgZMrNe_0'),
-            InlineKeyboardButton('🗑 Close', callback_data='close'),
-        ]
-    ]
-    await message.reply("<b>The source code of this bot is public and can be found at <a href=https://github.com/subinps/VCPlayerBot>VCPlayerBot.</a>\nYou can deploy your own bot and use in your group.\n\nFeel free to star☀️ the repo if you liked it 🙃.</b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
-    await delete_messages([message])
+#@Client.on_message(filters.command(['heartless', f"heartless@{Config.BOT_USERNAME}"]))
+#async def repo_(client, message):
+#    buttons = [
+#        [
+#            InlineKeyboardButton('🧩 Repository', url='https://github.com/subinps/VCPlayerBot'),
+#            InlineKeyboardButton('⚙️ Update Channel', url='https://t.me/subin_works'),     
+#        ],
+#        [
+#            InlineKeyboardButton("🎞 How to Deploy", url='https://youtu.be/mnWgZMrNe_0'),
+#            InlineKeyboardButton('🗑 Close', callback_data='close'),
+#        ]
+#    ]
+#    await message.reply("<b>The source code of this bot is public and can be found at <a href=https://github.com/subinps/VCPlayerBot>VCPlayerBot.</a>\nYou can deploy your own bot and use in your group.\n\nFeel free to star☀️ the repo if you liked it 🙃.</b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+#    await delete_messages([message])
 
 @Client.on_message(filters.command(['restart', 'update', f"restart@{Config.BOT_USERNAME}", f"update@{Config.BOT_USERNAME}"]) & admin_filter & chat_filter)
 async def update_handler(client, message):
     if Config.HEROKU_APP:
-        k = await message.reply("Heroku APP found, Restarting app to update.")
+        k = await message.reply("`Restarting Bot ...`")
         if Config.DATABASE_URI:
             msg = {"msg_id":k.message_id, "chat_id":k.chat.id}
             if not await db.is_saved("RESTART"):
@@ -211,7 +210,7 @@ async def update_handler(client, message):
                 await db.edit_config("RESTART", msg)
             await sync_to_db()
     else:
-        k = await message.reply("No Heroku APP found, Trying to restart.")
+        k = await message.reply("`Trying To Restart ...`")
         if Config.DATABASE_URI:
             msg = {"msg_id":k.message_id, "chat_id":k.chat.id}
             if not await db.is_saved("RESTART"):
@@ -226,13 +225,13 @@ async def update_handler(client, message):
 
 @Client.on_message(filters.command(['logs', f"logs@{Config.BOT_USERNAME}"]) & admin_filter & chat_filter)
 async def get_logs(client, message):
-    m=await message.reply("Checking logs..")
-    if os.path.exists("botlog.txt"):
-        await message.reply_document('botlog.txt', caption="Bot Logs")
+    m=await message.reply("Checking logs ...")
+    if os.path.exists("heartless.txt"):
+        await message.reply_document('heartless.txt', caption="~ Bot Logs")
         await m.delete()
         await delete_messages([message])
     else:
-        k = await m.edit("No log files found.")
+        k = await m.edit("No Log Files Found !")
         await delete_messages([message, k])
 
 @Client.on_message(filters.command(['env', f"env@{Config.BOT_USERNAME}", "config", f"config@{Config.BOT_USERNAME}"]) & sudo_filter & chat_filter)
