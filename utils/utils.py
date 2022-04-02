@@ -1476,8 +1476,8 @@ async def get_buttons():
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(f"🎸 Start the Player", callback_data="restart"),
-                    InlineKeyboardButton('🗑 Close', callback_data='close'),
+                    InlineKeyboardButton(f"✗ ꜱᴛᴀʀᴛ ᴛʜᴇ ᴘʟᴀʏᴇʀ ✗", callback_data="restart"),
+                    InlineKeyboardButton('✗ ᴄʟᴏꜱᴇ ✗', callback_data='close'),
                 ],
             ]
             )
@@ -1489,8 +1489,8 @@ async def get_buttons():
                 ],
                 [
                     InlineKeyboardButton(f"⏯ {get_pause(Config.PAUSE)}", callback_data=f"{get_pause(Config.PAUSE)}"),
-                    InlineKeyboardButton('🔊 Volume Control', callback_data='volume_main'),
-                    InlineKeyboardButton('🗑 Close', callback_data='close'),
+                    InlineKeyboardButton('✗ ᴠᴏʟᴜᴍᴇ ✗', callback_data='volume_main'),
+                    InlineKeyboardButton('✗ ᴄʟᴏꜱᴇ ✗', callback_data='close'),
                 ],
             ]
             )
@@ -1501,18 +1501,18 @@ async def get_buttons():
                     InlineKeyboardButton(f"{get_player_string()}", callback_data='info_player'),
                 ],
                 [
-                    InlineKeyboardButton("⏮ Rewind", callback_data='rewind'),
+                    InlineKeyboardButton("✗ ʀᴇᴡɪɴᴅ ✗", callback_data='rewind'),
                     InlineKeyboardButton(f"⏯ {get_pause(Config.PAUSE)}", callback_data=f"{get_pause(Config.PAUSE)}"),
-                    InlineKeyboardButton(f"⏭ Seek", callback_data='seek'),
+                    InlineKeyboardButton(f"✗ ꜱᴇᴇᴋ ✗", callback_data='seek'),
                 ],
                 [
-                    InlineKeyboardButton("🔄 Shuffle", callback_data="shuffle"),
-                    InlineKeyboardButton("⏩ Skip", callback_data="skip"),
-                    InlineKeyboardButton("⏮ Replay", callback_data="replay"),
+                    InlineKeyboardButton("✗ ꜱʜᴜꜰꜰʟᴇ ✗", callback_data="shuffle"),
+                    InlineKeyboardButton("✗ ꜱᴋɪᴘ ✗", callback_data="skip"),
+                    InlineKeyboardButton("✗ ʀᴇᴘʟᴀʏ ✗", callback_data="replay"),
                 ],
                 [
-                    InlineKeyboardButton('🔊 Volume Control', callback_data='volume_main'),
-                    InlineKeyboardButton('🗑 Close', callback_data='close'),
+                    InlineKeyboardButton('✗ ᴠᴏʟᴜᴍᴇ ✗', callback_data='volume_main'),
+                    InlineKeyboardButton('✗ ᴄʟᴏꜱᴇ ✗', callback_data='close'),
                 ]
             ]
             )
@@ -1524,7 +1524,7 @@ async def settings_panel():
         [
             [
                InlineKeyboardButton(f"Player Mode", callback_data='info_mode'),
-               InlineKeyboardButton(f"{'🔂 Non Stop Playback' if Config.IS_LOOP else '▶️ Play and Leave'}", callback_data='is_loop'),
+               InlineKeyboardButton(f"{'🔂 Non Stop Playback' if Config.IS_LOOP else '▶️ Play & Leave'}", callback_data='is_loop'),
             ],
             [
                 InlineKeyboardButton("🎞 Video", callback_data=f"info_video"),
