@@ -3,10 +3,15 @@ services:
   worker:
     build: .
     environment:
-      REDIS_URI: $REDIS_URI
-      REDIS_PASSWORD: $REDIS_PASSWORD
-      SESSION: $SESSION
-      API_ID: $API_ID  # defaults to None
-      API_HASH: $API_HASH  # defaults to None
-      MONGO_URI: $MONGO_URI  # defaults to None
-      DATABASE_URL: $DATABASE_URL  # defaults to None
+      API_ID: $API_ID
+      API_HASH: $API_HASH
+      BOT_TOKEN: $BOT_TOKEN
+      SESSION_STRING: $SESSION_STRING  # defaults to None
+      CHAT: $CHAT  # defaults to None
+      LOG_GROUP: $LOG_GROUP  # defaults to None
+      QUALITY: $QUALITY  # defaults to None
+      DATABASE_URI: $DATABASE_URI
+      ADMINS: $ADMINS
+      ADMIN_ONLY: $ADMIN_ONLY
+      STARTUP_STREAM: $STARTUP_STREAM  # defaults to None
+      REPLY_MESSAGE: $REPLY_MESSAGE  # defaults to None
