@@ -1488,7 +1488,7 @@ async def get_buttons():
                     InlineKeyboardButton(f"{get_player_string()}", callback_data="info_player"),
                 ],
                 [
-                    InlineKeyboardButton(f"⏯ {get_pause(Config.PAUSE)}", callback_data=f"{get_pause(Config.PAUSE)}"),
+                    InlineKeyboardButton(f"✗ ᴘᴀᴜꜱᴇ ✗ {get_pause(Config.PAUSE)}", callback_data=f"{get_pause(Config.PAUSE)}"),
                     InlineKeyboardButton('✗ ᴠᴏʟᴜᴍᴇ ✗', callback_data='volume_main'),
                     InlineKeyboardButton('✗ ᴄʟᴏꜱᴇ ✗', callback_data='close'),
                 ],
@@ -1502,7 +1502,7 @@ async def get_buttons():
                 ],
                 [
                     InlineKeyboardButton("✗ ʀᴇᴡɪɴᴅ ✗", callback_data='rewind'),
-                    InlineKeyboardButton(f"⏯ {get_pause(Config.PAUSE)}", callback_data=f"{get_pause(Config.PAUSE)}"),
+                    InlineKeyboardButton(f"✗ ᴘᴀᴜꜱᴇ ✗ {get_pause(Config.PAUSE)}", callback_data=f"{get_pause(Config.PAUSE)}"),
                     InlineKeyboardButton(f"✗ ꜱᴇᴇᴋ ✗", callback_data='seek'),
                 ],
                 [
@@ -1523,31 +1523,31 @@ async def settings_panel():
     reply_markup=InlineKeyboardMarkup(
         [
             [
-               InlineKeyboardButton(f"Player Mode", callback_data='info_mode'),
-               InlineKeyboardButton(f"{'🔂 Non Stop Playback' if Config.IS_LOOP else '▶️ Play & Leave'}", callback_data='is_loop'),
+               InlineKeyboardButton(f"✦ ᴘʟᴀʏᴇʀ ᴍᴏᴅᴇ ✦", callback_data='info_mode'),
+               InlineKeyboardButton(f"{'↺ ɴᴏɴ ꜱᴛᴏᴘ ᴘʟᴀʏʙᴀᴄᴋ ↺' if Config.IS_LOOP else '▶ ᴘʟᴀʏ & ʟᴇᴀᴠᴇ ◁'}", callback_data='is_loop'),
             ],
             [
-                InlineKeyboardButton("🎞 Video", callback_data=f"info_video"),
-                InlineKeyboardButton(f"{'📺 Enabled' if Config.IS_VIDEO else '🎙 Disabled'}", callback_data='is_video'),
+                InlineKeyboardButton("✦ Video ✦", callback_data=f"info_video"),
+                InlineKeyboardButton(f"{'📺 Enabled' if Config.IS_VIDEO else '✘ ᴅɪꜱᴀʙʟᴇᴅ ✘'}", callback_data='is_video'),
             ],
             [
-                InlineKeyboardButton("🤴 Admin Only", callback_data=f"info_admin"),
-                InlineKeyboardButton(f"{'🔒 Enabled' if Config.ADMIN_ONLY else '🔓 Disabled'}", callback_data='admin_only'),
+                InlineKeyboardButton("✦ Admin Only ✦", callback_data=f"info_admin"),
+                InlineKeyboardButton(f"{'✓ ᴇɴᴀʙʟᴇᴅ ✓' if Config.ADMIN_ONLY else '✘ ᴅɪꜱᴀʙʟᴇᴅ ✘'}", callback_data='admin_only'),
             ],
             [
-                InlineKeyboardButton("🪶 Edit Title", callback_data=f"info_title"),
-                InlineKeyboardButton(f"{'✏️ Enabled' if Config.EDIT_TITLE else '🚫 Disabled'}", callback_data='edit_title'),
+                InlineKeyboardButton("✦ Edit Title ✦", callback_data=f"info_title"),
+                InlineKeyboardButton(f"{'✓ ᴇɴᴀʙʟᴇᴅ ✓' if Config.EDIT_TITLE else '✘ ᴅɪꜱᴀʙʟᴇᴅ ✘'}", callback_data='edit_title'),
             ],
             [
-                InlineKeyboardButton("🔀 Shuffle Mode", callback_data=f"info_shuffle"),
-                InlineKeyboardButton(f"{'✅ Enabled' if Config.SHUFFLE else '🚫 Disabled'}", callback_data='set_shuffle'),
+                InlineKeyboardButton("✦ Shuffle Mode ✦", callback_data=f"info_shuffle"),
+                InlineKeyboardButton(f"{'✓ ᴇɴᴀʙʟᴇᴅ ✓' if Config.SHUFFLE else '✘ ᴅɪꜱᴀʙʟᴇᴅ ✘'}", callback_data='set_shuffle'),
             ],
             [
-                InlineKeyboardButton("👮 Auto Reply (PM Permit)", callback_data=f"info_reply"),
-                InlineKeyboardButton(f"{'✅ Enabled' if Config.REPLY_PM else '🚫 Disabled'}", callback_data='reply_msg'),
+                InlineKeyboardButton("✦ Auto Reply ✦", callback_data=f"info_reply"),
+                InlineKeyboardButton(f"{'✓ ᴇɴᴀʙʟᴇᴅ ✓' if Config.REPLY_PM else '✘ ᴅɪꜱᴀʙʟᴇᴅ ✘'}", callback_data='reply_msg'),
             ],
             [
-                InlineKeyboardButton('🗑 Close', callback_data='close'),
+                InlineKeyboardButton('✗ ᴄʟᴏꜱᴇ ✗', callback_data='close'),
             ]
             
         ]
