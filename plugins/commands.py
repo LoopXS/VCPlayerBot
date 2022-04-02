@@ -237,7 +237,7 @@ async def get_logs(client, message):
 @Client.on_message(filters.command(['env', f"env@{Config.BOT_USERNAME}", "config", f"config@{Config.BOT_USERNAME}"]) & sudo_filter & chat_filter)
 async def set_heroku_var(client, message):
     with suppress(MessageIdInvalid, MessageNotModified):
-        m = await message.reply("Checking config vars..")
+        m = await message.reply("Checking Config Vars ...")
         if " " in message.text:
             cmd, env = message.text.split(" ", 1)
             if "=" in env:
