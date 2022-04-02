@@ -1485,7 +1485,7 @@ async def get_buttons():
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(f"{get_player_string()}", callback_data="info_player"),
+                    InlineKeyboardButton(f"✗ {get_player_string()} ✗", callback_data="info_player"),
                 ],
                 [
                     InlineKeyboardButton(f"✗ ᴘᴀᴜꜱᴇ ✗ {get_pause(Config.PAUSE)}", callback_data=f"{get_pause(Config.PAUSE)}"),
@@ -1498,7 +1498,7 @@ async def get_buttons():
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(f"{get_player_string()}", callback_data='info_player'),
+                    InlineKeyboardButton(f"✗ {get_player_string()} ✗", callback_data='info_player'),
                 ],
                 [
                     InlineKeyboardButton("✗ ʀᴇᴡɪɴᴅ ✗", callback_data='rewind'),
@@ -1527,23 +1527,23 @@ async def settings_panel():
                InlineKeyboardButton(f"{'↺ ɴᴏɴ ꜱᴛᴏᴘ ᴘʟᴀʏʙᴀᴄᴋ ↺' if Config.IS_LOOP else '▶ ᴘʟᴀʏ & ʟᴇᴀᴠᴇ ◁'}", callback_data='is_loop'),
             ],
             [
-                InlineKeyboardButton("✦ Video ✦", callback_data=f"info_video"),
-                InlineKeyboardButton(f"{'📺 Enabled' if Config.IS_VIDEO else '✘ ᴅɪꜱᴀʙʟᴇᴅ ✘'}", callback_data='is_video'),
+                InlineKeyboardButton("✦ ᴠɪᴅᴇᴏ ✦", callback_data=f"info_video"),
+                InlineKeyboardButton(f"{'✓ ᴇɴᴀʙʟᴇᴅ ✓' if Config.IS_VIDEO else '✘ ᴅɪꜱᴀʙʟᴇᴅ ✘'}", callback_data='is_video'),
             ],
             [
-                InlineKeyboardButton("✦ Admin Only ✦", callback_data=f"info_admin"),
+                InlineKeyboardButton("✦ ᴀᴅᴍɪɴ ᴏɴʟʏ ✦", callback_data=f"info_admin"),
                 InlineKeyboardButton(f"{'✓ ᴇɴᴀʙʟᴇᴅ ✓' if Config.ADMIN_ONLY else '✘ ᴅɪꜱᴀʙʟᴇᴅ ✘'}", callback_data='admin_only'),
             ],
             [
-                InlineKeyboardButton("✦ Edit Title ✦", callback_data=f"info_title"),
+                InlineKeyboardButton("✦ ᴇᴅɪᴛ ᴛɪᴛʟᴇ ✦", callback_data=f"info_title"),
                 InlineKeyboardButton(f"{'✓ ᴇɴᴀʙʟᴇᴅ ✓' if Config.EDIT_TITLE else '✘ ᴅɪꜱᴀʙʟᴇᴅ ✘'}", callback_data='edit_title'),
             ],
             [
-                InlineKeyboardButton("✦ Shuffle Mode ✦", callback_data=f"info_shuffle"),
+                InlineKeyboardButton("✦ ꜱʜᴜꜰꜰʟᴇ ᴍᴏᴅᴇ ✦", callback_data=f"info_shuffle"),
                 InlineKeyboardButton(f"{'✓ ᴇɴᴀʙʟᴇᴅ ✓' if Config.SHUFFLE else '✘ ᴅɪꜱᴀʙʟᴇᴅ ✘'}", callback_data='set_shuffle'),
             ],
             [
-                InlineKeyboardButton("✦ Auto Reply ✦", callback_data=f"info_reply"),
+                InlineKeyboardButton("✦ ᴀᴜᴛᴏ ʀᴇᴘʟʏ ✦", callback_data=f"info_reply"),
                 InlineKeyboardButton(f"{'✓ ᴇɴᴀʙʟᴇᴅ ✓' if Config.REPLY_PM else '✘ ᴅɪꜱᴀʙʟᴇᴅ ✘'}", callback_data='reply_msg'),
             ],
             [
@@ -1560,26 +1560,26 @@ async def recorder_settings():
     reply_markup=InlineKeyboardMarkup(
         [
         [
-            InlineKeyboardButton(f"{'⏹ Stop Recording' if Config.IS_RECORDING else '⏺ Start Recording'}", callback_data='record'),
+            InlineKeyboardButton(f"{'◉ ꜱᴛᴏᴘ ʀᴇᴄᴏʀᴅɪɴɢ ◎' if Config.IS_RECORDING else '◉ ꜱᴛᴀʀᴛ ʀᴇᴄᴏʀᴅɪɴɢ ◎'}", callback_data='record'),
         ],
         [
-            InlineKeyboardButton(f"Record Video", callback_data='info_videorecord'),
-            InlineKeyboardButton(f"{'Enabled' if Config.IS_VIDEO_RECORD else 'Disabled'}", callback_data='record_video'),
+            InlineKeyboardButton(f"✦ ʀᴇᴄᴏʀᴅ ᴠɪᴅᴇᴏ ✦", callback_data='info_videorecord'),
+            InlineKeyboardButton(f"{'✓ ᴇɴᴀʙʟᴇᴅ ✓' if Config.IS_VIDEO_RECORD else '✘ ᴅɪꜱᴀʙʟᴇᴅ ✘'}", callback_data='record_video'),
         ],
         [
-            InlineKeyboardButton(f"Video Dimension", callback_data='info_videodimension'),
-            InlineKeyboardButton(f"{'Portrait' if Config.PORTRAIT else 'Landscape'}", callback_data='record_dim'),
+            InlineKeyboardButton(f"✦ ᴠɪᴅᴇᴏ ᴅɪᴍᴇɴꜱɪᴏɴ ✦", callback_data='info_videodimension'),
+            InlineKeyboardButton(f"{'✓ ᴘᴏʀᴛʀᴀɪᴛ ✓' if Config.PORTRAIT else '✓ ʟᴀɴᴅꜱᴄᴀᴘᴇ ✓'}", callback_data='record_dim'),
         ],
         [
-            InlineKeyboardButton(f"Custom Recording Title", callback_data='info_rectitle'),
-            InlineKeyboardButton(f"{Config.RECORDING_TITLE if Config.RECORDING_TITLE else 'Default'}", callback_data='info_rectitle'),
+            InlineKeyboardButton(f"✦ ᴄᴜꜱᴛᴏᴍ ʀᴇᴄᴏʀᴅɪɴɢ ᴛɪᴛʟᴇ ✦", callback_data='info_rectitle'),
+            InlineKeyboardButton(f"{Config.RECORDING_TITLE if Config.RECORDING_TITLE else '✓ ᴅᴇꜰᴀᴜʟᴛ ✓'}", callback_data='info_rectitle'),
         ],
         [
-            InlineKeyboardButton(f"Recording Dump Channel", callback_data='info_recdumb'),
-            InlineKeyboardButton(f"{Config.RECORDING_DUMP if Config.RECORDING_DUMP else 'Not Dumping'}", callback_data='info_recdumb'),
+            InlineKeyboardButton(f"✦ ʀᴇᴄᴏʀᴅɪɴɢ ᴅᴜᴍᴘ ᴄʜᴀɴɴᴇʟ ✦", callback_data='info_recdumb'),
+            InlineKeyboardButton(f"{Config.RECORDING_DUMP if Config.RECORDING_DUMP else '✓ ɴᴏᴛ ᴅᴜᴍᴘɪɴɢ ✓'}", callback_data='info_recdumb'),
         ],
         [
-            InlineKeyboardButton('🗑 Close', callback_data='close'),
+            InlineKeyboardButton('✗ ᴄʟᴏꜱᴇ ✗', callback_data='close'),
         ]
         ]
     )
@@ -1598,8 +1598,8 @@ async def volume_buttons():
             InlineKeyboardButton(f"+ 10", callback_data='volume_add'),
         ],
         [
-            InlineKeyboardButton(f"🔙 Back", callback_data='volume_back'),
-            InlineKeyboardButton('🗑 Close', callback_data='close'),
+            InlineKeyboardButton(f"✗ ʙᴀᴄᴋ ✗", callback_data='volume_back'),
+            InlineKeyboardButton('✗ ᴄʟᴏꜱᴇ ✗', callback_data='close'),
         ]
         ]
     )
