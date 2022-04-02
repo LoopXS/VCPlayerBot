@@ -107,7 +107,7 @@ async def add_to_playlist(_, message: Message):
                 text = message.text.split(" ", 1)
                 query = text[1]
             else:
-                await msg.edit("You Didn't gave me anything to play.Reply to a video or a youtube link or a direct link.")
+                await msg.edit("You didn't gave me anything to play. Reply to a video or a youtube link or a direct link.")
                 await delete_messages([message, msg])
                 return
             regex = r"^(?:https?:\/\/)?(?:www\.)?youtu\.?be(?:\.com)?\/?.*(?:watch|embed)?(?:.*v=|v\/|\/)([\w\-_]+)\&?"
@@ -282,11 +282,11 @@ async def add_to_playlist(_, message: Message):
 @Client.on_message(filters.command(["leave", f"leave@{Config.BOT_USERNAME}"]) & admin_filter & chat_filter)
 async def leave_voice_chat(_, m: Message):
     if not Config.CALL_STATUS:        
-        k=await m.reply("Not joined any voicechat.")
+        k=await m.reply("Not Joined Any Voicechat.")
         await delete_messages([m, k])
         return
     await leave_call()
-    k=await m.reply("Succesfully left videochat.")
+    k=await m.reply("Succesfully Left Videochat.")
     await delete_messages([m, k])
 
 
@@ -294,7 +294,7 @@ async def leave_voice_chat(_, m: Message):
 @Client.on_message(filters.command(["shuffle", f"shuffle@{Config.BOT_USERNAME}"]) & admin_filter & chat_filter)
 async def shuffle_play_list(client, m: Message):
     if not Config.CALL_STATUS:
-        k = await m.reply("Not joined any voicechat.")
+        k = await m.reply("Not Joined Any Voicechat.")
         await delete_messages([m, k])
         return
     else:
@@ -303,7 +303,7 @@ async def shuffle_play_list(client, m: Message):
             await shuffle_playlist()
             await delete_messages([m, k])            
         else:
-            k=await m.reply_text(f"You cant shuffle playlist with less than 3 songs.")
+            k=await m.reply_text(f"You can't shuffle playlist with less than 3 songs.")
             await delete_messages([m, k])
 
 
