@@ -207,7 +207,7 @@ async def schedule_vc(bot, message):
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton(f"Schedule", url=f"https://telegram.dog/{Config.BOT_USERNAME}?start=sch_{sid}"),
+                            InlineKeyboardButton(f"✗ ꜱᴄʜᴇᴅᴜʟᴇ ✗", url=f"https://telegram.dog/{Config.BOT_USERNAME}?start=sch_{sid}"),
                         ]
                     ]
                 ),)
@@ -240,7 +240,7 @@ async def schedule_vc(bot, message):
                     k=d    
                 f.append(InlineKeyboardButton(text=f"{k}",callback_data=f"sch_month_{year_}_{month}_{d}"))
             button.append(f)
-        button.append([InlineKeyboardButton("Close", callback_data="schclose")])
+        button.append([InlineKeyboardButton("✗ ᴄᴀɴᴄᴇʟ ✗"", callback_data="schclose")])
         await msg.edit(f"Choose the day of the month you want to schedule the voicechat.\nToday is {thisday} {smonth} {year}. Chooosing a date preceeding today will be considered as next year {year+1}", reply_markup=InlineKeyboardMarkup(button))
 
 
@@ -280,8 +280,8 @@ async def delete_sch(bot, message):
         else:
             buttons = [
                 [
-                    InlineKeyboardButton('Cancel All Schedules', callback_data='schcancel'),
-                    InlineKeyboardButton('No', callback_data='schclose'),
+                    InlineKeyboardButton('✗ ᴄᴀɴᴄᴇʟ ᴀʟʟ ꜱᴄʜᴇᴅᴜʟᴇꜱ ✗"', callback_data='schcancel'),
+                    InlineKeyboardButton('✗ ɴᴏ ✗"', callback_data='schclose'),
                 ]
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
@@ -309,8 +309,8 @@ async def delete_sch(bot, message):
 async def delete_all_sch(bot, message):
     buttons = [
         [
-            InlineKeyboardButton('Cancel All Schedules', callback_data='schcancel'),
-            InlineKeyboardButton('No', callback_data='schclose'),
+            InlineKeyboardButton('✗ ᴄᴀɴᴄᴇʟ ᴀʟʟ ꜱᴄʜᴇᴅᴜʟᴇꜱ ✗', callback_data='schcancel'),
+            InlineKeyboardButton('✗ ɴᴏ ✗', callback_data='schclose'),
         ]
     ]
     reply_markup = InlineKeyboardMarkup(buttons)
